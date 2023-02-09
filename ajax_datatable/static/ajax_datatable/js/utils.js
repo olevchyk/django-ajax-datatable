@@ -126,9 +126,9 @@ window.AjaxDatatableViewUtils = (function() {
 
     function is_none(item){
         if (typeof item !== "undefined" && item !== null) {
-            return true
+            return false
         }
-        return false
+        return true
     }
 
     function _setup_column_filters(table, data) {
