@@ -134,8 +134,8 @@ window.AjaxDatatableViewUtils = (function() {
                 if (item.visible) {
                     if (item.searchable) {
                         var html = '';
-                        var initial_search_value = (typeof item.initialSearchValue  !== "undefined" && item.initialSearchValue !== null) ? item.initialSearchValue  : ''
-                        if (!initial_search_value && savedstate) {
+                        var initial_search_value = item.initialSearchValue
+                        if (typeof item.initialSearchValue !== "undefined" && item.initialSearchValue !== null && savedstate) {
                             var saved_search = savedstate.columns[index].search.search
                             initial_search_value = saved_search ? saved_search : initial_search_value 
                         }
