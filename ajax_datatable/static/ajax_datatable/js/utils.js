@@ -141,10 +141,10 @@ window.AjaxDatatableViewUtils = (function() {
                 if (item.visible) {
                     if (item.searchable) {
                         var html = '';
-                        var initial_search_value = is_none(item.initial_search_value) ? item.initial_search_value : ''
+                        var initial_search_value = (!is_none(item.initial_search_value)) ? item.initial_search_value : ''
                         if (!savedstate) {
                             var saved_search = savedstate.columns[index].search.search
-                            initial_search_value = is_none(saved_search) ? saved_search : initial_search_value
+                            initial_search_value = (!is_none(saved_search)) ? saved_search : initial_search_value
                         }
                         if ('choices' in item && item.choices) {
 
