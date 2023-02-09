@@ -152,7 +152,7 @@ window.AjaxDatatableViewUtils = (function() {
                             var select = $('<select data-index="' + index.toString() + '"><option value=""></option></select>');
                             $(item.choices).each(function(index, choice) {
                                 var option = $("<option>").attr('value', choice[0]).text(choice[1]);
-                                if (choice[0] === String(initial_search_value)) {
+                                if (String(choice[0]) === initial_search_value) {
                                     option.attr('selected', 'selected');
                                 }
                                 select.append(option);
