@@ -124,6 +124,13 @@ window.AjaxDatatableViewUtils = (function() {
         return csrftoken;
     }
 
+    function is_none(item){
+        if (typeof item !== "undefined" && item !== null) {
+            return true
+        }
+        return false
+    }
+
     function _setup_column_filters(table, data) {
 
         if (data.show_column_filters) {
@@ -134,10 +141,10 @@ window.AjaxDatatableViewUtils = (function() {
                 if (item.visible) {
                     if (item.searchable) {
                         var html = '';
-                        var initial_search_value = item.initialSearchValue
-                        if (typeof item.initialSearchValue !== "undefined" && item.initialSearchValue !== null && savedstate) {
+                        var initial_search_value = is_none(item.initial_search_value) ? item.initial_search_value : ''
+                        if (!savedstate) {
                             var saved_search = savedstate.columns[index].search.search
-                            initial_search_value = saved_search ? saved_search : initial_search_value 
+                            initial_search_value = is_none(saved_search) ? saved_search : initial_search_value
                         }
                         if ('choices' in item && item.choices) {
 
