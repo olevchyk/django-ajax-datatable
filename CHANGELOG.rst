@@ -3,6 +3,15 @@
 History
 =======
 
+v4.5.0
+------
+* Skip `filter_queryset_by_date_range` (that is: ignore `date_from` and `date_to` from requests params)
+  when `show_date_filters` is disabled
+
+v4.4.5
+------
+* Remove pytz since it's deprecated in Django 4.0 and will be removed in Django 5.0
+
 v4.4.4
 ------
 * few changes to allow the initialization of a DatatableView offline (for example, to export a filtered queryset from a background process)

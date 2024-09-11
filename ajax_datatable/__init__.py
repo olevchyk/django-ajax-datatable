@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-__version__ = '4.4.4'
+__version__ = '4.5.0'
 
 from .columns import (  # noqa
     Column,
